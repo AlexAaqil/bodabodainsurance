@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+  <section class="main-section">
+    <h2>Compare Insurance Packages</h2>
+    {% if user.is_authenticated == False %}
+        <p>Login to Book the insurance package that best suits your needs:</p>
+    {% endif %}
+    <div class="insurance-options">
+        {% for booking in bookings %}
+            <div class="package">
+                <h3>{{ booking.package }}</h3>
+                <p>{{ booking.description }}</p>
+                <p>Premium (per year): ${{ booking.price }}</p>
+                {% if user.is_authenticated %}
+                    <form method="POST" action="{{ url_for('user_bookings') }}">
+                        <input type="hidden" name="booking_id" value="{{ booking.id }}">
+                        <button type="submit" class="btn">Book Now</button>
+                    </form>
+
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+  </section>
+
+  <!-- <section class="main-section">
+    <h2>Booking Confirmation</h2>
+    <div id="confirmation-message"></div>
+  </section> -->
+
+  <footer>
+    <p>&copy; 2023 Boda-boda Insurance System</p>
+  </footer>
+
+  <script>
+    function bookPackage(packageName) {
+      const confirmationMessage = document.getElementById('confirmation-message');
+      confirmationMessage.innerHTML = `You have successfully booked ${packageName}. An insurance agent will contact you soon to complete the booking process.`;
+    }
+  </script>
+{% endblock %}

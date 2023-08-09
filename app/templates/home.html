@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+  <section class="main-section">
+    <h2>Welcome to the Boda-boda Insurance System</h2>
+    <p>Get the right insurance coverage for your motorcycle and protect yourself on the road.</p>
+    <a href={{ url_for('login') }} class="btn">Login</a>
+    <a href={{ url_for('register') }} class="btn">Register</a>
+  </section>
+
+  <section class="main-section">
+    <h2>Why Choose Us?</h2>
+    <p>Our platform provides a user-friendly experience, making it easy for you to find the best insurance for your needs.</p>
+    <ul>
+      <li>Compare different insurance packages</li>
+      <li>Get quotes from reliable insurance companies</li>
+      <li>Easy and quick online booking</li>
+      <li>24/7 customer support</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Boda-boda Insurance System</p>
+  </footer>
+{% endblock %}

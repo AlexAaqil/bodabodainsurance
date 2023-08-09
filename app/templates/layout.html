@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')
+    }}">
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='css/booking.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='css/information.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='css/comparison.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',
+    filename='css/register.css') }}">
+    <title>{{ page_title }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>Boda-Boda Insurance Information & booking system</h1>
+      <nav>
+        <a href={{ url_for('home') }}>Home</a>
+        <a href={{ url_for('information') }}>Insurance Information</a>
+        <a href={{ url_for('comparison') }}>Insurance Comparison</a>
+        <a href={{ url_for('bookings') }}>Booking</a>
+        <a href={{ url_for('contact') }}>Contact Us</a>
+        {% if user.is_authenticated %}
+            | <a href="#">Hi {{ user.username }}</a>
+            | <a href="{{ url_for('user_bookings') }}">My Bookings</a>
+            | <a href="{{ url_for('logout') }}">logout</a>
+        {% endif %}
+      </nav>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <p class="error">{{ message }}</p>
+                {% else %}
+                    <p class="success">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block body %} {% endblock %}
+  </body>
+</html>
