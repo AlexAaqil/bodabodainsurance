@@ -8,9 +8,10 @@
     <div class="insurance-options">
         {% for booking in bookings %}
             <div class="package">
-                <h3>{{ booking.package }}</h3>
-                <p>{{ booking.description }}</p>
-                <p>Premium (per year): ${{ booking.price }}</p>
+                <h3>{{ booking.insurance_company }}</h3>
+                <p>{{ booking.insurance_type }} Package</p>
+                <p>{{ booking.coverage_details }}</p>
+                <p>Premium (per year): KES. {{ booking.price }}</p>
                 {% if user.is_authenticated %}
                     <form method="POST" action="{{ url_for('user_bookings') }}">
                         <input type="hidden" name="booking_id" value="{{ booking.id }}">

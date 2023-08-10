@@ -5,9 +5,10 @@
     <div class="insurance-options">
         {% for user_booking in all_bookings %}
             <div class="package">
-                <h3>{{ user_booking.booking.package }}</h3>
-                <p>{{ user_booking.booking.description }}</p>
-                <p>Premium (per year): ${{ user_booking.booking.price }}</p>
+                <h3>{{ user_booking.booking.insurance_company }}</h3>
+                <p>{{ user_booking.booking.insurance_type }}</p>
+                <p>{{ user_booking.booking.coverage_details }}</p>
+                <p>Premium (per year): KES. {{ user_booking.booking.price }}</p>
                 <p>User: {{ user_booking.user.email }}</p>
             </div>
         {% endfor %}

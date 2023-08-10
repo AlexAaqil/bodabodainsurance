@@ -20,11 +20,12 @@ def add_booking():
     page_title = 'Add a Booking'
 
     if request.method == 'POST':
-        package = request.form.get('package')
+        insurance_company = request.form.get('insurance_company')
+        insurance_type = request.form.get('insurance_type')
+        coverage_details = request.form.get('coverage_details')
         price = request.form.get('price')
-        description = request.form.get('description')
 
-        new_booking = Booking(package=package, price=price, description=description)
+        new_booking = Booking(insurance_company=insurance_company, insurance_type=insurance_type, coverage_details=coverage_details, price=price)
         db.session.add(new_booking)
         db.session.commit()
         flash('Booking has been added!', category='success')
@@ -62,11 +63,6 @@ def list_all_bookings():
 def information():
     page_title = 'Information'
     return render_template('information.html', page_title=page_title, user=current_user)
-
-@app.route('/comparison')
-def comparison():
-    page_title = 'Comparison'
-    return render_template('comparison.html', page_title=page_title, user=current_user)
 
 @app.route('/contact')
 def contact():

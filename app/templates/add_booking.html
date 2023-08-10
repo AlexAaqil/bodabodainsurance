@@ -2,17 +2,21 @@
 {% block body %}
   <section class="main-section">
     <form method="post" action={{ url_for('add_booking') }}>
-      <div class="form-group">
-        <label for="package">Package:</label>
-        <input type="text" id="package" name="package" required>
-      </div>
+        <div class="form-group">
+            <label for="insurance_company">Insurance Company:</label>
+            <input type="text" id="insurance_company" name="insurance_company" required>
+        </div>
+        <div class="form-group">
+            <label for="insurance_type">Insurance Type:</label>
+            <input type="text" id="insurance_type" name="insurance_type" required>
+        </div>
+        <div class="form-group">
+            <label for="coverage_details">Coverage Details:</label>
+            <textarea name="coverage_details" id="coverage_details" cols="30" rows="10"></textarea>
+        </div>
       <div class="form-group">
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" required>
-      </div>
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn">Add Booking</button>

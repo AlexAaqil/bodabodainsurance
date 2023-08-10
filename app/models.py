@@ -13,9 +13,10 @@ class User(db.Model, UserMixin):
 
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    package = db.Column(db.String(100), nullable=False)
+    insurance_company = db.Column(db.String, nullable=False)
+    insurance_type = db.Column(db.String, nullable=False)
+    coverage_details = db.Column(db.String, nullable=False)
     price = db.Column(db.Float, nullable=False)
-    description = db.Column(db.Text, nullable=True)
 
 
 class UserBooking(db.Model):
