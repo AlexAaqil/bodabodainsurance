@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-align: left;
+  display: inline-block; /* Set the elements to be side-by-side */
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+}
+nav a:hover {
+  background-color: green;
+}
+nav a:not(:last-child) {
+  margin-right: 10px;
+}
+
+.main-section {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+button.btn,
+a.btn,
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.btn {
+  display: inline-block;
+  margin-top: 1rem;
+}
+a.btn:hover {
+  background-color: #0056b3;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type=number],
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.insurance-options {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.insurance-options .package {
+  width: 30%;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.error,
+.success {
+  color: white;
+  padding: 1em 2em;
+  width: 92%;
+  margin: auto;
+}
+
+.error {
+  background: rgb(255, 38, 0);
+}
+
+.success {
+  background: green;
+}/*# sourceMappingURL=styles.css.map */

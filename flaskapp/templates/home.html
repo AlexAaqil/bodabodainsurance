@@ -4,8 +4,8 @@
     <h2>Welcome to the Boda-boda Insurance System</h2>
     <p>Get the right insurance coverage for your motorcycle and protect yourself on the road.</p>
     {% if user.is_authenticated == False %}
-        <a href={{ url_for('login') }} class="btn">Login</a>
-        <a href={{ url_for('register') }} class="btn">Register</a>
+        <a href={{ url_for('users.login') }} class="btn">Login</a>
+        <a href={{ url_for('users.register') }} class="btn">Register</a>
     {% endif %}
   </section>
 

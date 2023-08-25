@@ -13,11 +13,10 @@
                 <p>{{ booking.coverage_details }}</p>
                 <p>Premium (per year): KES. {{ booking.price }}</p>
                 {% if user.is_authenticated %}
-                    <form method="POST" action="{{ url_for('user_bookings') }}">
+                    <form method="POST" action="{{ url_for('users.user_bookings') }}">
                         <input type="hidden" name="booking_id" value="{{ booking.id }}">
                         <button type="submit" class="btn">Book Now</button>
                     </form>
-
                 {% endif %}
             </div>
         {% endfor %}

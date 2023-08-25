@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
   <section class="main-section">
-    <form method="post" action={{ url_for('add_booking') }}>
+    <form method="post" action={{ url_for('bookings.add_booking') }}>
         <div class="form-group">
             <label for="insurance_company">Insurance Company:</label>
             <input type="text" id="insurance_company" name="insurance_company" required>

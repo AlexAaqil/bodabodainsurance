@@ -26,5 +26,5 @@ After running the application, open your browswer and go to:
 http://127.0.0.1:5000
 
 ## Routes
-- http://127.0.0.1:5000/list_all_bookings - lists all the bookings users have made.
+- http://127.0.0.1:5000/all_users_bookings - lists all the bookings users have made.
 - http://127.0.0.1:5000/add_booking - enables admins to add new types of bookings users can book.

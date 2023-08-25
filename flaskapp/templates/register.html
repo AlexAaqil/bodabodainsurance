@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
   <section class="main-section">
-    <form method="post" action={{ url_for('register') }}>
+    <form method="post" action={{ url_for('users.register') }}>
       <div class = "form-group">
         <label for ="National ID">National ID:</label>
         <input type="number" id="national_id" name="national_id" required>
