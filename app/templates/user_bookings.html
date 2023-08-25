@@ -2,6 +2,7 @@
 {% block body %}
   <section class="main-section">
     <h2>User Bookings</h2>
+    <p>Here is a list of the bookings you've made so far:</p>
     <div class="insurance-options">
         {% for user_booking in list_user_bookings %}
             <div class="package">
@@ -9,7 +10,6 @@
                 <p>{{ user_booking.booking.insurance_type }}</p>
                 <p>{{ user_booking.booking.coverage_details }}</p>
                 <p>Premium (per year): KES. {{ user_booking.booking.price }}</p>
-                <p>User: {{ user_booking.user.email }}</p>
             </div>
         {% endfor %}
     </div>
