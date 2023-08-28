@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% block body %}
+<section class="Admin_Homepage">
+    <div class="container main-section">
+        <h2>Hi Admin!</h2>
+        {% if admin_user.is_authenticated == False %}
+            <a href={{ url_for('admin.login') }} class="btn">Login</a>
+            <!-- <a href={{ url_for('users.register') }} class="btn">Register</a> -->
+        {% endif %}
+    </div>
+
+    <div class="main-section">
+        <h2>Why Choose Us?</h2>
+        <p>Our platform provides a user-friendly experience, making it easy for you to find the best insurance for your needs.</p>
+        <ul>
+        <li>Compare different insurance packages</li>
+        <li>Get quotes from reliable insurance companies</li>
+        <li>Easy and quick online booking</li>
+        <li>24/7 customer support</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Boda-boda Insurance System</p>
+    </footer>
+
+</section>
+{% endblock body %}

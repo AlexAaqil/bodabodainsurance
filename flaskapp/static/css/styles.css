@@ -98,12 +98,16 @@ textarea {
   box-sizing: border-box;
 }
 
-.insurance-options {
+.Bookings .header {
+  display: flex;
+  justify-content: space-between;
+}
+.Bookings .insurance-options {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.insurance-options .package {
+.Bookings .insurance-options .package {
   width: 30%;
   border: 1px solid #ccc;
   padding: 1rem;

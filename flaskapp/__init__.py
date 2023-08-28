@@ -28,8 +28,10 @@ with app.app_context():
 
 
 from flaskapp.users.routes import users
+from flaskapp.admin.routes import admin
 from flaskapp.booking.routes import booking
 from flaskapp.main.routes import main
 app.register_blueprint(users)
+app.register_blueprint(admin)
 app.register_blueprint(booking)
 app.register_blueprint(main)

@@ -1,15 +1,14 @@
-{% extends "layout.html" %}
+{% extends "admin/base.html" %}
 {% block body %}
-  <section class="main-section">
+  <section class="Bookings main-section">
     <h2>Bookings</h2>
     <div class="insurance-options">
         {% for user_booking in bookings %}
             <div class="package">
                 <h3>{{ user_booking.booking.insurance_company }}</h3>
-                <p>{{ user_booking.booking.insurance_type }}</p>
+                <p>{{ user_booking.booking.insurance_type }} | KES. {{ user_booking.booking.price }} / Year</p>
                 <p>{{ user_booking.booking.coverage_details }}</p>
-                <p>Premium (per year): KES. {{ user_booking.booking.price }}</p>
-                <p>User: {{ user_booking.user.email }}</p>
+                <p><b>User: {{ user_booking.user.email }}</b></p>
             </div>
         {% endfor %}
     </div>

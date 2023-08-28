@@ -102,16 +102,23 @@ textarea {
   box-sizing: border-box;
 }
 
-.insurance-options {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+.Bookings {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .package {
-    width: 30%;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
+  .insurance-options {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .package {
+      width: 30%;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 

@@ -1,0 +1,50 @@
+{% extends "admin/base.html" %}
+{% block body %}
+  <section class="Bookings main-section">
+    <div class="header">
+        <h2>Available Insurance Packages</h2>
+        <div class="action">
+            {% if admin_user.is_authenticated == False %}
+                <p>Login to add bookings</p>
+            {% else %}
+                <a href="{{ url_for('bookings.add_booking') }}" class="btn">New Insurance Package</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="insurance-options">
+        {% for booking in bookings %}
+            <div class="package">
+                <h3>{{ booking.insurance_company }}</h3>
+                <p>{{ booking.insurance_type }} Package</p>
+                <p>{{ booking.coverage_details }}</p>
+                <p>Premium (per year): KES. {{ booking.price }}</p>
+                <div class="actions">
+                    <a href="{{ url_for('bookings.update_booking', booking_id=booking.id) }}" class="btn">Update</a>
+                    <a href="{{ url_for('bookings.delete_booking', booking_id=booking.id) }}" onclick="confirmDelete({{ booking.id }});" class="btn danger">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {# If the booking has been deleted, show a message #}
+    {% if deleted_booking %}
+        <div class="alert alert-success">
+            The booking has been deleted successfully!
+        </div>
+    {% endif %}
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Boda-boda Insurance System</p>
+  </footer>
+
+  <script>
+    function confirmDelete(booking_id) {
+        var response = confirm("Are you sure you want to delete this booking?");
+        if (response) {
+            window.location.href = '/admin/delete_booking/' + booking_id;
+        }
+    }
+  </script>
+{% endblock %}
